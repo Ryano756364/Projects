@@ -5,6 +5,7 @@ import com.ryanscompany.model.Loan;
 import util.BasicConsole;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
@@ -68,16 +69,18 @@ public class RyansCompanyView {
     public void printLoanList(List<Loan> loans) {
         String heading1 = "Id    C.ID Program         Term(Y)    Loan Amount";
         String heading2 = "---- ----- --------------- ------- --------------";
-        String formatString = "%-4d %-5d %-15s %4f %14f";
+        String formatString = "%-4d %-5d %-15s %4s %14s";
         printMessage(heading1);
         printMessage(heading2);
+        NumberFormat moneyFormat = NumberFormat.getCurrencyInstance();
+        DecimalFormat decimalFormat = new DecimalFormat("0.#");
         for (Loan loan : loans) {
             String s = String.format(formatString,
                     loan.getLoan_id(),
                     loan.getCustomer_id(),
                     loan.getProgram(),
-                    loan.getTermYears().doubleValue(),
-                    loan.getLoanAmount().doubleValue()
+                    decimalFormat.format(loan.getTermYears().doubleValue()),
+                    moneyFormat.format(loan.getLoanAmount().doubleValue())
             );
             printMessage(s);
         }
