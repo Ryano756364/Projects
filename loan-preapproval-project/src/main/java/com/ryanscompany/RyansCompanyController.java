@@ -15,6 +15,7 @@ public class RyansCompanyController {
     private final RyansCompanyView view;
     private CustomerDao customerDao;
     private LoanDao loanDao;
+    private LoanLogic loanLogic;
 
     public RyansCompanyController(BasicConsole console, CustomerDao customerDao, LoanDao loanDao) {
         view = new RyansCompanyView(console);
@@ -180,8 +181,13 @@ public class RyansCompanyController {
             return;
         }
         newCustomer = customerDao.createCustomer(newCustomer);
+
+        loanLogic.checkForConventional(newCustomer);
+        loanLogic.checkForFHA(newCustomer);
+
         view.printMessage(newCustomer.getFirstName() + " " + newCustomer.getLastName() + "'s profile has been created.");
     }
+
     private void updateCustomerInfo(){
         if (customerDao == null){
             view.printErrorMessage("You must create a CusotmerDao and pass it into controller");
@@ -280,7 +286,7 @@ public class RyansCompanyController {
         }
 
         //Confirmation
-        boolean isConfirmed = view.promptForYesNo("Are you sure you want to delete the loan for id: " + loan.getLoan_id());
+        boolean isConfirmed = view.promptForYesNo("Are you sure you want to delete the loan for id: " + loan.getLoan_id() + " [y/n]");
         if (!isConfirmed){
             return;
         }

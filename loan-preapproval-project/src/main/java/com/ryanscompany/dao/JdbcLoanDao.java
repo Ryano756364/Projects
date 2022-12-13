@@ -68,6 +68,15 @@ public class JdbcLoanDao implements LoanDao{
     }
 
     @Override
+    public Loan createLoan(Loan newLoan) {
+        String sql = "INSERT INTO loan (customer_id, program, term_years, loan_amount, dti, expiration) " +
+                "VALUES (?, ?, ?, ?, ?, ?) RETURNING loan_id;";
+        int newId = jdbcTemplate.queryForObject(sql, int.class, newLoan.getCustomer_id(), newLoan.getProgram(),
+                newLoan.getTermYears(), newLoan.getLoanAmount(), newLoan.getDti(), newLoan.getExpiration());
+        return getLoanById(newId);
+    }
+
+    @Override
     public void deleteLoan(int loanId) {
         String sql = "DELETE FROM loan " +
                 "WHERE loan_id = ?;";
@@ -83,7 +92,7 @@ public class JdbcLoanDao implements LoanDao{
         loan.setProgram(results.getString("program"));
         loan.setTermYears(results.getInt("term_years"));
         loan.setLoanAmount(results.getInt("loan_amount"));
-        loan.setDti(results.getInt("dti"));
+        loan.setDti(results.getBigDecimal("dti"));
         if (results.getDate("expiration") != null) {
             loan.setExpiration(results.getDate("expiration").toLocalDate());
         }

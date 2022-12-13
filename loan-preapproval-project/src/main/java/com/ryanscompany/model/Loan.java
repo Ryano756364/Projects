@@ -1,5 +1,6 @@
 package com.ryanscompany.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Loan {
@@ -9,12 +10,22 @@ public class Loan {
     private String program;
     private int termYears;
     private int loanAmount;
-    private int dti;
+    private BigDecimal dti;
     private LocalDate expiration;
 
     public Loan() {};
 
-    public Loan(int loan_id, int customer_id, String program, int termYears, int loanAmount, int dti,
+    public Loan(int customer_id, String program, int termYears, int loanAmount, BigDecimal dti,
+                LocalDate expiration) {
+        this.customer_id = customer_id;
+        this.program = program;
+        this.termYears = termYears;
+        this.loanAmount = loanAmount;
+        this.dti = dti;
+        this.expiration = expiration;
+    }
+
+    public Loan(int loan_id, int customer_id, String program, int termYears, int loanAmount, BigDecimal dti,
                 LocalDate expiration) {
         this.loan_id = loan_id;
         this.customer_id = customer_id;
@@ -65,11 +76,11 @@ public class Loan {
         this.loanAmount = loanAmount;
     }
 
-    public int getDti() {
+    public BigDecimal getDti() {
         return dti;
     }
 
-    public void setDti(int dti) {
+    public void setDti(BigDecimal dti) {
         this.dti = dti;
     }
 
