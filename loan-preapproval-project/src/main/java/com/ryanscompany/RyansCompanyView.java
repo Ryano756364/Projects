@@ -68,7 +68,7 @@ public class RyansCompanyView {
     public void printLoanList(List<Loan> loans) {
         String heading1 = "Id    C.ID Program         Term(Y)    Loan Amount";
         String heading2 = "---- ----- --------------- ------- --------------";
-        String formatString = "%-4d %-5d %-15s %4d %14d";
+        String formatString = "%-4d %-5d %-15s %4f %14f";
         printMessage(heading1);
         printMessage(heading2);
         for (Loan loan : loans) {
@@ -76,8 +76,8 @@ public class RyansCompanyView {
                     loan.getLoan_id(),
                     loan.getCustomer_id(),
                     loan.getProgram(),
-                    loan.getTermYears(),
-                    loan.getLoanAmount()
+                    loan.getTermYears().doubleValue(),
+                    loan.getLoanAmount().doubleValue()
             );
             printMessage(s);
         }

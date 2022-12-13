@@ -15,7 +15,6 @@ public class RyansCompanyController {
     private final RyansCompanyView view;
     private CustomerDao customerDao;
     private LoanDao loanDao;
-    private LoanLogic loanLogic;
 
     public RyansCompanyController(BasicConsole console, CustomerDao customerDao, LoanDao loanDao) {
         view = new RyansCompanyView(console);
@@ -182,8 +181,8 @@ public class RyansCompanyController {
         }
         newCustomer = customerDao.createCustomer(newCustomer);
 
-        loanLogic.checkForConventional(newCustomer);
-        loanLogic.checkForFHA(newCustomer);
+        loanDao.checkForConventional(newCustomer);
+        loanDao.checkForFHA(newCustomer);
 
         view.printMessage(newCustomer.getFirstName() + " " + newCustomer.getLastName() + "'s profile has been created.");
     }

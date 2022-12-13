@@ -8,14 +8,14 @@ public class Loan {
     private int loan_id;
     private int customer_id;
     private String program;
-    private int termYears;
-    private int loanAmount;
+    private BigDecimal termYears;
+    private BigDecimal loanAmount;
     private BigDecimal dti;
     private LocalDate expiration;
 
     public Loan() {};
 
-    public Loan(int customer_id, String program, int termYears, int loanAmount, BigDecimal dti,
+    public Loan(int customer_id, String program, BigDecimal termYears, BigDecimal loanAmount, BigDecimal dti,
                 LocalDate expiration) {
         this.customer_id = customer_id;
         this.program = program;
@@ -25,7 +25,7 @@ public class Loan {
         this.expiration = expiration;
     }
 
-    public Loan(int loan_id, int customer_id, String program, int termYears, int loanAmount, BigDecimal dti,
+    public Loan(int loan_id, int customer_id, String program, BigDecimal termYears, BigDecimal loanAmount, BigDecimal dti,
                 LocalDate expiration) {
         this.loan_id = loan_id;
         this.customer_id = customer_id;
@@ -60,19 +60,19 @@ public class Loan {
         this.program = program;
     }
 
-    public int getTermYears() {
+    public BigDecimal getTermYears() {
         return termYears;
     }
 
-    public void setTermYears(int termYears) {
+    public void setTermYears(BigDecimal termYears) {
         this.termYears = termYears;
     }
 
-    public int getLoanAmount() {
+    public BigDecimal getLoanAmount() {
         return loanAmount;
     }
 
-    public void setLoanAmount(int loanAmount) {
+    public void setLoanAmount(BigDecimal loanAmount) {
         this.loanAmount = loanAmount;
     }
 
