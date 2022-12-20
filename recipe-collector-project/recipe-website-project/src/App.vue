@@ -1,14 +1,17 @@
 <template>
   <the-header></the-header>
+  <main-menu></main-menu>
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue'
+import MainMenu from './components/MainMenu.vue';
 
 export default {
   name: 'App',
   components: {
-    TheHeader
+    TheHeader, 
+    MainMenu
   }
 }
 </script>
