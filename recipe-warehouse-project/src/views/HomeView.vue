@@ -1,30 +1,32 @@
 <template>
-  <section id="main-page">
 
-    <div class="home">
-      <h1>Recipe Warehouse</h1>
-    </div>
+  <div class="home">
+    <h1>Cookbook Lab</h1>
   
-    <div class="menuButton">
-      <router-link to="/newrecipe" class="routerLink">Add New Recipe</router-link>
-    </div>
-    <div class="menuButton">
-      <router-link to="/allrecipes" class="routerLink">View All Recipes</router-link>
-    </div>
-    <div class="menuButton">
-      <router-link to="/" class="comingSoon">
-        Search Recipes
-        (coming soon)
-      </router-link>
-    </div>
-    <div class="menuButton">
-      <router-link to="/" class="comingSoon">
-        View Recipes By Person
-        (coming soon)
-      </router-link>
-    </div>
-  
-  </section>
+    <section class="buttons">
+      <div class="buttonContainer">
+        <router-link to="/newrecipe" class="routerLink">Add New Recipe</router-link>
+      </div>
+
+      <div class="buttonContainer">
+        <router-link to="/allrecipes" class="routerLink">View All Recipes</router-link>
+      </div>
+
+      <div class="buttonContainer">
+        <router-link to="/" class="comingSoon">
+          Search Recipes
+          (coming soon)
+        </router-link>
+      </div>
+
+      <div class="buttonContainer">
+        <router-link to="/" class="comingSoon">
+          View Recipes By Person 
+          (coming soon)
+        </router-link>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
@@ -36,29 +38,36 @@
 <style>
  
   .home {
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.30);
-    margin: 0.5rem 0.5rem 2.5rem 0.5rem;
-    border-radius: 8px;
-    padding: 0.5rem;
-    background-color: #0f936c;
     color: white;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   h1 {
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.30);
+    padding: 0.5rem;
+    border-radius: 8px;
+    margin: 1rem;
     font-size: 3rem;
-    margin-bottom: 32px;
+    background-color: #0f936c;
+    min-width: 800px;
   }
 
-  .routerLink, .comingSoon{
+  .buttonContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+  }
+
+  .routerLink, .comingSoon {
     text-decoration: none;
     color: inherit;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.30);
-    margin: 1.5rem 15rem;
     border-radius: 8px;
-    padding: 0.5rem;
+    padding: 1rem;
     color: rgb(0, 0, 0);
-    text-align: center;
   }
 
   .routerLink {
@@ -73,11 +82,6 @@
   }
   .comingSoon:hover {
     background-color: rgb(247, 222, 176);
-  }
-
-  
-  .menuButton {
-    margin-top: 2rem;
   }
   
 </style>
