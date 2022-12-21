@@ -1,23 +1,16 @@
 <template>
   <section>
     <div class="menu-button">
-      <h2>Add New Recipe</h2>
-    </div>
-    <div class="menu-button">
-      <h2>View All Recipes</h2>
-    </div>
-    <div class="menu-button">
-      <h2>Search Recipes</h2>
-    </div>
-    <div class="menu-button">
-      <h2>View Recipes By Person</h2>
+      <h2>{{ menuItem }}</h2>
     </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: 'MainMenu'
+  props: [
+    'menuItem'
+  ]
 }
 </script>
 

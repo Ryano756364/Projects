@@ -1,11 +1,24 @@
 <template>
   <the-header></the-header>
-  <main-menu></main-menu>
+    <ul>
+      <main-menu 
+        menu-item ="Add New Recipe">
+      </main-menu>
+      <main-menu 
+        menu-item ="View All Recipes">
+      </main-menu>
+      <main-menu 
+        menu-item ="Search Recipes">
+      </main-menu>
+      <main-menu 
+        menu-item ="View Recipes By Person">
+      </main-menu>
+    </ul>
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue'
-import MainMenu from './components/MainMenu.vue';
+import MainMenu from './components/MainMenuItem.vue';
 
 export default {
   name: 'App',
