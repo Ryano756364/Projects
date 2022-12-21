@@ -1,39 +1,41 @@
 <template>
-  <div class="add-recipe-popup">
-      <div class="popup-content">
-        <h2>Add New Recipe</h2>
+  <section id="add-recipe">
+    <h2>Add New Recipe</h2>
 
-        <form @submit.prevent="addNewRecipe">
-          <div class="group">
-            <label>Title</label>
-            <input type="text" v-model="newRecipe.title"/>
+    <div class="recipe-content">
+
+      <form @submit.prevent="addNewRecipe">
+        <div class="group">
+          <label>Title</label>
+          <input type="text" v-model="newRecipe.title"/>
+        </div>
+
+        <div class="group">
+          <label>Description</label>
+          <textarea v-model="newRecipe.description"></textarea>
+        </div>
+
+        <div class="group">
+          <label>Ingredients</label>
+          <div class="ingredient" v-for="i in newRecipe.ingredientRows" :key="i">
+            <input type="text" v-model="newRecipe.ingredients[i - 1]"/>
           </div>
+          <button type="button" @click="addNewIngredient">Add Ingredient</button>
+        </div>
 
-          <div class="group">
-            <label>Description</label>
-            <textarea v-model="newRecipe.description"></textarea>
+        <div class="group">
+          <label>Steps</label>
+          <div class="method" v-for="i in newRecipe.methodRows" :key="i">
+            <textarea v-model="newRecipe.method[i - 1]"></textarea>
           </div>
+          <button type="button" @click="addNewStep">Add Step</button>
+        </div>
 
-          <div class="group">
-            <label>Ingredients</label>
-            <div class="ingredient" v-for="i in newRecipe.ingredientRows" :key="i">
-              <input type="text" v-model="newRecipe.ingredients[i - 1]"/>
-            </div>
-            <button type="button" @click="addNewIngredient">Add Ingredient</button>
-          </div>
+        <button type="submit">Add Recipe</button>
+        
+      </form>
 
-          <div class="group">
-            <label>Method</label>
-            <div class="method" v-for="i in newRecipe.methodRows" :key="i">
-              <textarea v-model="newRecipe.method[i - 1]"></textarea>
-            </div>
-            <button type="button" @click="addNewStep">Add Step</button>
-          </div>
-
-          <button type="submit">Add Recipe</button>
-          
-        </form>
-
+      <section id="bottom-buttons">
         <router-link :to="'/allrecipes'">
             <button>Return To All Recipes</button>
         </router-link> 
@@ -41,9 +43,9 @@
         <router-link :to="'/'">
             <button>Return To Home</button>
         </router-link> 
-
-      </div>
+      </section>
     </div>
+  </section>
 </template>
 
 
@@ -65,9 +67,7 @@
     });
 
     const store = useStore();
-    //when button is clicked, new row is added
-    //using value because otherwise we will be grabbing functionality versus data of newRecipef
-
+    
       const addNewIngredient = () => {
         //when button is clicked, new row is added
         newRecipe.value.ingredientRows++;
@@ -87,7 +87,6 @@
           return;
         }
       
-
       // ...newRecipe.value is called destructuring your object
       store.commit('ADD_RECIPE', { ...newRecipe.value });
 
@@ -99,7 +98,6 @@
         ingredientRows: 1,
         methodRows: 1
       };
-
     }
 
       //pass constants into function below
@@ -115,8 +113,7 @@
 </script>
 
 <style>
-  /* .home {
-    padding: 1rem;
+  #add-recipe {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,8 +123,69 @@
     border-style: solid;
     border-width: 2px;
     border-radius: 8px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.30);
-    color: #0f936c;
-  } */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.30);
+    /* color: #0f936c;
+    background-color: white; */
+    background-color: #0f936c;
+    min-width: 500px;
+    margin-top: 1rem;
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .recipe-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: .50rem 2rem;
+    font-size: 1.75rem;
+  }
+
+  form{
+    width: 400px;
+  }
+
+  label {
+    display: block;
+  }
+
+  input, textarea{
+    width: 100%;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  textarea {
+    height: 100px;
+    resize: none;
+  }
+
+  .group {
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    border: none;
+    cursor: pointer;
+    background-color: #0f936c;
+    font-size: 1.50rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.30);
+  }
+
+  #bottom-buttons {
+    margin-top: 30px;
+  }
+
+  a{
+    margin: 5px;
+  }
 
 </style>
