@@ -37,7 +37,7 @@
 
       <section id="bottom-buttons">
         <router-link :to="'/allrecipes'">
-            <button>Return To All Recipes</button>
+            <button>See All Recipes</button>
         </router-link> 
 
         <router-link :to="'/'">
@@ -124,10 +124,7 @@
     border-width: 2px;
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.30);
-    /* color: #0f936c;
-    background-color: white; */
     background-color: #0f936c;
-    min-width: 500px;
     margin-top: 1rem;
     font-size: 2.25rem;
     margin-bottom: 1rem;
@@ -138,12 +135,11 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding: .50rem 2rem;
     font-size: 1.75rem;
   }
 
   form{
-    width: 400px;
+    width: 100%;
   }
 
   label {
@@ -155,7 +151,7 @@
     border: 1.5px solid black;
     border-radius: 5px;
     padding: 0.5rem;
-    margin-bottom: 1rem;
+    margin: 1rem;
   }
 
   textarea {

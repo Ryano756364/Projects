@@ -51,7 +51,6 @@
     margin: 1rem;
     font-size: 3rem;
     background-color: #0f936c;
-    min-width: 800px;
   }
 
   .buttonContainer{
