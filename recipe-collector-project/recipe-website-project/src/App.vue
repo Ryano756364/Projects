@@ -2,20 +2,12 @@
   <the-header></the-header>
     <ul>
       <main-menu 
-        menu-item ="Add New Recipe">
-      </main-menu>
-      <main-menu 
-        menu-item ="View All Recipes">
-      </main-menu>
-      <main-menu 
-        menu-item ="Search Recipes">
-      </main-menu>
-      <main-menu 
-        menu-item ="View Recipes By Person">
+        v-for="item in menu" 
+        :key="item.id"
+        :menu-item ="item.name">
       </main-menu>
     </ul>
 </template>
-
 <script>
 import TheHeader from './components/TheHeader.vue'
 import MainMenu from './components/MainMenuItem.vue';
@@ -25,6 +17,28 @@ export default {
   components: {
     TheHeader, 
     MainMenu
+  },
+  data(){
+    return {
+      menu: [
+        {
+          id: 1,
+          name: "Add New Recipe"
+        }, 
+        {
+          id: 2,
+          name: "View All Recipes"
+        }, 
+        {
+          id: 3,
+          name: "Search Recipes"
+        }, 
+        {
+          id: 4,
+          name: "View Recipes By Person"
+        }, 
+      ]
+    }
   }
 }
 </script>

@@ -7,10 +7,19 @@
 </template>
 
 <script>
+
 export default {
-  props: [
-    'menuItem'
-  ]
+  //Wanted to show control over data coming into prop
+  props: {
+    id: {
+      type: Number, 
+      required: true
+    },
+    menuItem: {
+      type: String, 
+      required: true
+    }
+  }
 }
 </script>
 
