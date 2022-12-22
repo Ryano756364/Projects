@@ -13,16 +13,18 @@
 		</div>
 
 		<div class="method">
-			<h3>Method</h3>
+			<h3>Steps</h3>
 			<ol>
-				<li v-for="(step, i) in recipe.method" :key="i">
+				<li class="recipe-step" v-for="(step, i) in recipe.method" :key="i">
           <!--Incase there are line breaks submitted, this will clean up the text-->
 					<span v-html="cleanText(step)"></span>
 				</li>
 			</ol>
 		</div>
 
-    <router-link to="/allrecipes">Go Back</router-link>
+    <router-link to="/allrecipes">
+			<button>Go Back</button>
+		</router-link>
   </div>
 </template>
 
@@ -45,5 +47,56 @@ export default {
 </script>
 
 <style scoped>
+
+	.recipe {
+		display: grid;
+		padding: 1rem;
+	}
+
+	p{
+		font-size: 1.25rem;
+		text-align: left;
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		padding-bottom: 0.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.ingredients {
+		padding: 1rem;
+		background-color: white;
+		border-radius: 0.5rem;
+		margin-bottom: 2rem;
+	}
+
+	h3 {
+		text-align: left;
+	}
+
+	ul {
+		display: block;
+		padding: 1rem;
+	}
+
+	.ingredients ul li {
+		display: list-item;
+		text-align: left;
+		padding: 0.25rem;
+	}
+
+	.method ol {
+		display: block;
+		margin-inline-start: 0px;
+		margin-top: 0.5rem;
+	}
+
+	.method ol li {
+		display: list-item;
+		text-align: left;
+		border-bottom: 1px solid black;
+		margin-bottom: 1rem;
+		padding-bottom: 0.75rem;
+		list-style-position: inside;
+	}
 
 </style>

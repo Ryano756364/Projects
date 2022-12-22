@@ -37,7 +37,7 @@
 
       <section id="bottom-buttons">
         <router-link :to="'/allrecipes'">
-            <button>See All Recipes</button>
+            <button>Go To All Recipes</button>
         </router-link> 
 
         <router-link :to="'/'">
@@ -178,6 +178,10 @@
 
   #bottom-buttons {
     margin-top: 30px;
+  }
+
+  #bottom-buttons button {
+    font-size: 1rem;
   }
 
   a{
