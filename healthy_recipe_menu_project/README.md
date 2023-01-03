@@ -19,3 +19,11 @@
 `GIT branching`
 
 `Shebang line`
+
+`Conversion of string to int on input`
+
+`Tuple / List unpacking`
+
+`Enumerate`
+
+`How to use .format() arguments`

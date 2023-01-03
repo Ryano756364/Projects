@@ -35,3 +35,11 @@ recipe_book = [
      ]
      ),
 ]
+
+choice = -1
+while choice != 0:
+    for index, (recipe, calories, date_added, ingredients) \
+            in enumerate(recipe_book):
+        print("{}: {}, {}, {}, {}"
+              .format(index + 1, recipe, calories, date_added, ingredients))
+    choice = int(input("Please choose your recipe to cook (0 to quit)"))
