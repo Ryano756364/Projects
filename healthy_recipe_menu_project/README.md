@@ -27,3 +27,7 @@
 `Enumerate`
 
 `How to use .format() arguments`
+
+`print() arguments`
+
+`CONSTANTS (and what they mean in Python)`
