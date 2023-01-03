@@ -1,40 +1,5 @@
 #!/usr/bin/env python3
-
-recipe_book = [
-    ("Chocolate Chip Cookies", "10,000 Calories", 2022,
-     [
-         (2, "Tubs of Butter"),
-         (2, "Bags of Chocolate Chips"),
-         (3, "Gallons of Oil"),
-         (3, "Gallons of Milk"),
-         (2, "Pounds of Love")
-     ]
-     ),
-    ("Buttered Strawberry Toast", "7,000 Calories", 2022,
-     [
-         (3, "Pieces of Toast"),
-         (2, "Sticks of Butter"),
-         (2, "Gallons of Oil"),
-         (4, "Bags of Strawberries"),
-     ]
-     ),
-    ("Healthy Donuts", "6,000 Calories", 2023,
-     [
-         (2, "Tubs of Flour"),
-         (2, "Cups of Water"),
-         (1, "Ultra Healthy Gluten Free Vegan Friendly Oil"),
-         (6, "Tubs of Oil"),
-     ]
-     ),
-    ("Healthy Chocolate Shake", "4,000 Calories", 2022,
-     [
-         (1, "Sugar Free Chocolate Chips"),
-         (1, "Cup of Water"),
-         (1, "Pound of Earth Friendly Flour"),
-         (4, "Tubs of Heavy Cream"),
-     ]
-     ),
-]
+from recipe_book_data import recipe_book
 
 RECIPE_NAME_INDEX = 0
 INGREDIENT_MENU_INDEX = 3
@@ -52,7 +17,7 @@ while choice != 0:
         for (ingredient_amount, ingredient) in ingredient_list:
             print("{} {}".format(ingredient_amount, ingredient))
         print()
-        choice = int(input("Are you done? (any key to continue to 0 to quit)"))
+        choice = int(input("Are you done? (any number to continue to 0 to quit)"))
         print()
         if choice == 0: break
     else:
