@@ -1,8 +1,6 @@
 ## Bank Account Project
 
 ---
-
----
 ### Languages Used
 `Java`
 
