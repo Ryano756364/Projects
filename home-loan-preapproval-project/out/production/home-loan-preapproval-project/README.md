@@ -1,0 +1,18 @@
+## Home Loan Pre-Approval Project (updated)
+
+---
+
+## Languages Used
+`Java`
+
+---
+
+## Goal
+To easily capture customer information from user input and let the program decide which loan programs are best for the customer.
+
+---
+## How-To
+
+Follow prompts in terminal by running main file in src package.
+
+---
