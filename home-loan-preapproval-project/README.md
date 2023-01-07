@@ -16,3 +16,12 @@ To easily capture customer information from user input and let the program decid
 Follow prompts in terminal by running main file in src package.
 
 ---
+
+## Showcase Understanding Of
+`Class Setup`
+
+`Method initialization`
+
+`Encapsulation`
+
+`Default class initializers`
