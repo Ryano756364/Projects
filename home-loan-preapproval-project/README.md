@@ -25,3 +25,6 @@ Follow prompts in terminal by running main file in src package.
 `Encapsulation`
 
 `Default class initializers`
+
+`Inhertiance`
+

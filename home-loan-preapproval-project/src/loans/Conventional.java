@@ -1,15 +1,12 @@
-package loans;
+package src.loans;
 
-public class USDA extends LoanSuper{
+public class Conventional extends LoanSuper{
 
-    private int maxIncomeAllowed;
-
-    public USDA(int maxLoanLimit, int minLoanLimit, double maxDTI, int minCreditScore, int maxIncomeAllowed) {
+    public Conventional(int maxLoanLimit, int minLoanLimit, double maxDTI, int minCreditScore) {
         this.maxLoanLimit = maxLoanLimit;
         this.minLoanLimit = minLoanLimit;
         this.maxDTI = maxDTI;
         this.minCreditScore = minCreditScore;
-        this.maxIncomeAllowed = maxIncomeAllowed;
     }
 
     public int getMaxLoanLimit() {
@@ -42,13 +39,5 @@ public class USDA extends LoanSuper{
 
     public void setMinCreditScore(int minCreditScore) {
         this.minCreditScore = minCreditScore;
-    }
-
-    public int getMaxIncomeAllowed() {
-        return maxIncomeAllowed;
-    }
-
-    public void setMaxIncomeAllowed(int maxIncomeAllowed) {
-        this.maxIncomeAllowed = maxIncomeAllowed;
     }
 }

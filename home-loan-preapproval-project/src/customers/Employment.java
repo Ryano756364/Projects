@@ -1,4 +1,4 @@
-package customers;
+package src.customers;
 
 import java.time.LocalDate;
 

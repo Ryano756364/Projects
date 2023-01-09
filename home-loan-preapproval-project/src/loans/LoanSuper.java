@@ -1,7 +1,7 @@
-package loans;
+package src.loans;
 
 public class LoanSuper {
-    //Mandatory fields required whenever building a new loan program
+    //Mandatory fields required whenever building/importing a new loan program
     protected int maxLoanLimit;
     protected int minLoanLimit;
     protected double maxDTI;

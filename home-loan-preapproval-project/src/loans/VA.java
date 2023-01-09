@@ -1,13 +1,15 @@
-package loans;
+package src.loans;
 
-public class Conventional extends LoanSuper{
+public class VA extends LoanSuper{
 
+    private boolean isVeteran;
 
-    public Conventional(int maxLoanLimit, int minLoanLimit, double maxDTI, int minCreditScore) {
+    public VA(int maxLoanLimit, int minLoanLimit, double maxDTI, int minCreditScore, boolean isVeteran) {
         this.maxLoanLimit = maxLoanLimit;
         this.minLoanLimit = minLoanLimit;
         this.maxDTI = maxDTI;
         this.minCreditScore = minCreditScore;
+        this.isVeteran = isVeteran;
     }
 
     public int getMaxLoanLimit() {
@@ -40,5 +42,13 @@ public class Conventional extends LoanSuper{
 
     public void setMinCreditScore(int minCreditScore) {
         this.minCreditScore = minCreditScore;
+    }
+
+    public boolean isVeteran() {
+        return isVeteran;
+    }
+
+    public void setVeteran(boolean veteran) {
+        isVeteran = veteran;
     }
 }

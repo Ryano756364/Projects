@@ -1,15 +1,11 @@
-package loans;
+package src.loans;
 
-public class VA extends LoanSuper{
-
-    private boolean isVeteran;
-
-    public VA(int maxLoanLimit, int minLoanLimit, double maxDTI, int minCreditScore, boolean isVeteran) {
+public class FHA extends LoanSuper{
+    public FHA(int maxLoanLimit, int minLoanLimit, double maxDTI, int minCreditScore) {
         this.maxLoanLimit = maxLoanLimit;
         this.minLoanLimit = minLoanLimit;
         this.maxDTI = maxDTI;
         this.minCreditScore = minCreditScore;
-        this.isVeteran = isVeteran;
     }
 
     public int getMaxLoanLimit() {
@@ -42,13 +38,5 @@ public class VA extends LoanSuper{
 
     public void setMinCreditScore(int minCreditScore) {
         this.minCreditScore = minCreditScore;
-    }
-
-    public boolean isVeteran() {
-        return isVeteran;
-    }
-
-    public void setVeteran(boolean veteran) {
-        isVeteran = veteran;
     }
 }

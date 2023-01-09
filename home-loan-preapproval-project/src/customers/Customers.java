@@ -1,6 +1,9 @@
-package customers;
+package src.customers;
+
+import java.math.BigInteger;
 
 public class Customers {
+    private int customerId;
     private String firstName;
     private String lastName;
     private String email;
@@ -9,15 +12,16 @@ public class Customers {
     private String city;
     private String state;
     private int zipCode;
-    private int phoneNumber;
+    private String phoneNumber;
     private int creditScore;
 
-    public Customers(String firstName, String email, int phoneNumber) {
-        this(firstName, "DefaultLastName", email, 000, "StreetName", "City",
+    public Customers(int customerId, String firstName, String email, String phoneNumber) {
+        this(customerId, firstName, "DefaultLastName", email, 000, "StreetName", "City",
                 "State", 00000, phoneNumber, 000);
     }
-    public Customers(String firstName, String lastName, String email, int streetNumber, String streetName,
-                     String city, String state, int zipCode, int phoneNumber, int creditScore) {
+    public Customers(int customerId, String firstName, String lastName, String email, int streetNumber, String streetName,
+                     String city, String state, int zipCode, String phoneNumber, int creditScore) {
+        this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -28,6 +32,13 @@ public class Customers {
         this.zipCode = zipCode;
         this.phoneNumber = phoneNumber;
         this.creditScore = creditScore;
+    }
+
+    public int getCustomerId(){
+        return this.customerId;
+    }
+    public void setCustomerId(int customerId){
+        this.customerId = customerId;
     }
 
     public String getFirstName() {
@@ -98,11 +109,11 @@ public class Customers {
         this.zipCode = zipCode;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -112,5 +123,14 @@ public class Customers {
 
     public void setCreditScore(int creditScore) {
         this.creditScore = creditScore;
+    }
+
+    @Override
+    public String toString() {
+        return "Customers{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                '}';
     }
 }
