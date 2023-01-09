@@ -1,10 +1,7 @@
 package loans;
 
-public class Conventional {
-    private int maxLoanLimit;
-    private int minLoanLimit;
-    private double maxDTI;
-    private int minCreditScore;
+public class Conventional extends LoanSuper{
+
 
     public Conventional(int maxLoanLimit, int minLoanLimit, double maxDTI, int minCreditScore) {
         this.maxLoanLimit = maxLoanLimit;

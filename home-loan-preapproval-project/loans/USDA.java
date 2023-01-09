@@ -1,10 +1,7 @@
 package loans;
 
-public class USDA {
-    private int maxLoanLimit;
-    private int minLoanLimit;
-    private double maxDTI;
-    private int minCreditScore;
+public class USDA extends LoanSuper{
+
     private int maxIncomeAllowed;
 
     public USDA(int maxLoanLimit, int minLoanLimit, double maxDTI, int minCreditScore, int maxIncomeAllowed) {

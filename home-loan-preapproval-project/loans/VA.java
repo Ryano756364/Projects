@@ -1,10 +1,7 @@
 package loans;
 
-public class VA {
-    private int maxLoanLimit;
-    private int minLoanLimit;
-    private double maxDTI;
-    private int minCreditScore;
+public class VA extends LoanSuper{
+
     private boolean isVeteran;
 
     public VA(int maxLoanLimit, int minLoanLimit, double maxDTI, int minCreditScore, boolean isVeteran) {

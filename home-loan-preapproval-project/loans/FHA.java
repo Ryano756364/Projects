@@ -1,11 +1,6 @@
 package loans;
 
-public class FHA {
-    private int maxLoanLimit;
-    private int minLoanLimit;
-    private double maxDTI;
-    private int minCreditScore;
-
+public class FHA extends LoanSuper{
     public FHA(int maxLoanLimit, int minLoanLimit, double maxDTI, int minCreditScore) {
         this.maxLoanLimit = maxLoanLimit;
         this.minLoanLimit = minLoanLimit;
