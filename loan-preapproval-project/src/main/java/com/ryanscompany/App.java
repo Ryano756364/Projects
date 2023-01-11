@@ -16,7 +16,7 @@ public class App {
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setUrl("jdbc:postgresql://localhost:5432/loancompany");
         dataSource.setUsername("postgres");
-        dataSource.setPassword("rpodell1");
+        dataSource.setPassword("");
 
         // Controller expects the DAOs it needs to be "injected" in the constructor.
         // Create the DAOs needed by the controller.
