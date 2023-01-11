@@ -1,11 +1,10 @@
 ## Recipe Instruction Project
 
 ---
-
 ### Languages Used
+`Java`
 
 ---
-
 ### Showcase Understanding Of
 `LinkedLists`
 
