@@ -28,3 +28,14 @@ Follow prompts in terminal by running main file in src package.
 
 `Inhertiance`
 
+`Interface`
+
+`Bulding out of classes`
+
+`Debugging`
+
+`Wrapping / Parsing`
+
+`Reading input from terminal`
+
+`SqlLite`
